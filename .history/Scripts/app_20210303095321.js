@@ -37,9 +37,14 @@
         //console.log(location.);
       });
 
+      $("a").on("mouseover", function()
+      {
+        $(this).css('cursor', 'pointer');
+      });
+
       $("a").on("mouseout", function()
       {
-        console.log("Leaving Tag");
+        $(this).css('cursor', 'crosshair');
       });
 
     });

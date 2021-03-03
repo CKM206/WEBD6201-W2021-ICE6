@@ -37,9 +37,9 @@
         //console.log(location.);
       });
 
-      $("a").on("mouseout", function()
+      $("a").on("mouseover", function()
       {
-        console.log("Leaving Tag");
+        $(this).css('cursor', 'pointer');
       });
 
     });

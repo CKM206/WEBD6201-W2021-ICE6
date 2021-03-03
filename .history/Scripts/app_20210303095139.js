@@ -35,16 +35,13 @@
 
         //location.href = String( location.href ).replace( /#/, "");
         //console.log(location.);
-      });
-
-      $("a").on("mouseout", function()
-      {
-        console.log("Leaving Tag");
-      });
-
+      })
     });
 
-    
+    $("a").on("mouseover", function()
+    {
+      $(this).css('cursor', 'pointer');
+    })
   }
 
 
