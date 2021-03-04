@@ -9,6 +9,8 @@
 ((core) =>
 {
 
+  console.log();
+
   function loadHeader(pageName)
   {
     $.get("./Views/components/header.html", function(data)
@@ -25,13 +27,13 @@
 
       $("a").on("click", function()
       {
-        $(`#${router.ActiveLink}`).removeClass("active");
-        router.ActiveLink = $(this).attr("id");
-        loadContent(router.ActiveLink);
-        $(`#${router.ActiveLink}`).addClass("active");
+        $(`#${activeLink}`).removeClass("active");
+        activeLink = $(this).attr("id");
+        loadContent(activeLink);
+        $(`#${activeLink}`).addClass("active");
 
-        console.log(router.ActiveLink);
-        history.replaceState({}, "", router.ActiveLink);
+        console.log(activeLink);
+        history.replaceState({}, "", activeLink);
 
         //location.href = String( location.href ).replace( /#/, "");
         //console.log(location.);
@@ -71,7 +73,7 @@
 
     function displayHome()
     {
-      router.ActiveLink = "home"
+      router.activeLink = "home"
         // Inject the header
         loadHeader(router.ActiveLink);
 

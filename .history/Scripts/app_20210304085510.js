@@ -9,6 +9,8 @@
 ((core) =>
 {
 
+  console.log();
+
   function loadHeader(pageName)
   {
     $.get("./Views/components/header.html", function(data)
@@ -71,12 +73,12 @@
 
     function displayHome()
     {
-      router.ActiveLink = "home"
+      router.router.ActiveLink = "home"
         // Inject the header
-        loadHeader(router.ActiveLink);
+        loadHeader(router.router.ActiveLink);
 
         // Inject Content
-        loadContent(router.ActiveLink)
+        loadContent(router.router.ActiveLink)
         
         // Inject Footer
         loadFooter();

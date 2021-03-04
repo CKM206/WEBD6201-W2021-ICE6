@@ -25,13 +25,13 @@
 
       $("a").on("click", function()
       {
-        $(`#${router.ActiveLink}`).removeClass("active");
-        router.ActiveLink = $(this).attr("id");
-        loadContent(router.ActiveLink);
-        $(`#${router.ActiveLink}`).addClass("active");
+        $(`#${activeLink}`).removeClass("active");
+        activeLink = $(this).attr("id");
+        loadContent(activeLink);
+        $(`#${activeLink}`).addClass("active");
 
-        console.log(router.ActiveLink);
-        history.replaceState({}, "", router.ActiveLink);
+        console.log(activeLink);
+        history.replaceState({}, "", activeLink);
 
         //location.href = String( location.href ).replace( /#/, "");
         //console.log(location.);
@@ -71,12 +71,12 @@
 
     function displayHome()
     {
-      router.ActiveLink = "home"
+      activeLink = "home"
         // Inject the header
-        loadHeader(router.ActiveLink);
+        loadHeader(activeLink);
 
         // Inject Content
-        loadContent(router.ActiveLink)
+        loadContent(activeLink)
         
         // Inject Footer
         loadFooter();

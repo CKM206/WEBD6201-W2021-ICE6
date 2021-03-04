@@ -9,6 +9,8 @@
 ((core) =>
 {
 
+  console.log();
+
   function loadHeader(pageName)
   {
     $.get("./Views/components/header.html", function(data)
