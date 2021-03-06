@@ -76,21 +76,6 @@
         console.log("Home Page Function Called!");
     }
 
-    function displayAbout()
-    {
-
-    }
-
-    function displayProjects()
-    {
-
-    }
-
-    function displayServices()
-    {
-
-    }
-
     function testFullName()
     {
       let messageArea = $("#messageArea").hide();

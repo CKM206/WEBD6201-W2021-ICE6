@@ -19,7 +19,7 @@
       // Highlight the Active Page
       $(`#${pageName}`).addClass("active");
 
-      // Loop through ach anchor tag of the unordered List (page links)
+      // Loop through ach anchor tag of the undordered List (page links)
       //-Add event listener / handler to allow for
       // Content injection
 
@@ -74,60 +74,6 @@
     function displayHome()
     {
         console.log("Home Page Function Called!");
-    }
-
-    function displayAbout()
-    {
-
-    }
-
-    function displayProjects()
-    {
-
-    }
-
-    function displayServices()
-    {
-
-    }
-
-    function testFullName()
-    {
-      let messageArea = $("#messageArea").hide();
-      let fullNamePattern = /([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*/;
-
-        
-        $("#fullName").on("blur", function()
-        {
-          if(!fullNamePattern.test($(this).val()))
-          {
-            $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter a valid Full Name. This must include at least a Capitalized first name followed by a Capitlalized last name.");
-          }
-          else
-          {
-              messageArea.removeAttr("class").hide();
-          }
-        });
-    }
-
-    function testContactNumber()
-    {
-      let messageArea = $("#messageArea");
-      let contactNumberPattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
-        
-        $("#contactNumber").on("blur", function()
-        {
-          if(!contactNumberPattern.test($(this).val()))
-          {
-            $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter a valid Contact Number. Country code and area code are both optional");
-          }
-          else
-          {
-              messageArea.removeAttr("class").hide();
-          }
-        });
     }
 
     function testEmailAddress()
@@ -346,7 +292,7 @@
         // clear the login form
         document.forms[0].reset();
         // return to the home page
-        location.href = "/home";
+        location.href = "/index";
       });
     }
 
@@ -437,6 +383,9 @@
         loadHeader(router.ActiveLink);
         loadContent(router.ActiveLink, ActiveLinkCallback(router.ActiveLink));
         loadFooter(router.ActiveLink);
+
+        // toggle login/logout
+       toggleLogin();
         
     }
 
