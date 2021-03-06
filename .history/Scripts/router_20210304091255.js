@@ -104,9 +104,9 @@ let route = location.pathname;
 
 if(router.Find(route) > -1)
 {
-    router.ActiveLink = (route == "/") ? "home" : route.substring(1);
+    console.log("Route Found");
 }                 
 else
 {
-    router.ActiveLink = "404";
+    console.log("Route Not Found");
 }

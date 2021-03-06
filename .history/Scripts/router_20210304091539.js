@@ -108,5 +108,5 @@ if(router.Find(route) > -1)
 }                 
 else
 {
-    router.ActiveLink = "404";
+    console.log("Route Not Found");
 }

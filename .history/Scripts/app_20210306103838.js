@@ -302,14 +302,12 @@
 
     function toggleLogin()
     {
-
-      console.log("Toggled Login");
       // if user is logged in
       if(sessionStorage.getItem("user"))
       {
         // swap out the login link for logout
         $("#loginListItem").html(
-        `<a id="logout" class="nav-link" aria-current="page"><i class="fas fa-sign-out-alt"></i> Logout</a>`
+        `<a id="logout" class="nav-link" aria-current="page" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
         );
 
         $("#logout").on("click", function()
@@ -323,15 +321,8 @@
        
         $(`<li class="nav-item">
         <a id="contactListLink" class="nav-link" aria-current="page" href="/contact-list"><i class="fas fa-users fa-lg"></i> Contact List</a>
-      </li>`).insertBefore("#loginListItem");
+      </li>`).insertBefore("#login");
       
-      }
-      else
-      {
-        // swap back the login link for logout
-        $("#loginListItem").html(
-          `<a id="login" class="nav-link" aria-current="page"><i class="fas fa-sign-in-alt"></i> Login</a>`
-          );
       }
     }
 
@@ -344,14 +335,11 @@
           case "projects": return displayProjects;
           case "services": return displayServices;
           case "contact": return displayContact;
-          case "contact-list": return displayContactList;
+          case "contact-List": return displayContactList;
           case "edit": return displayEdit;
           case "login": return displayLogin;
           case "register": return displayRegister;
           case "404": return display404;
-          default:
-            console.error("ERROR: Callback does not exist " + activeLink);
-            break;
 
         }
     }

@@ -302,8 +302,6 @@
 
     function toggleLogin()
     {
-
-      console.log("Toggled Login");
       // if user is logged in
       if(sessionStorage.getItem("user"))
       {
@@ -344,14 +342,11 @@
           case "projects": return displayProjects;
           case "services": return displayServices;
           case "contact": return displayContact;
-          case "contact-list": return displayContactList;
+          case "contact-List": return displayContactList;
           case "edit": return displayEdit;
           case "login": return displayLogin;
           case "register": return displayRegister;
           case "404": return display404;
-          default:
-            console.error("ERROR: Callback does not exist " + activeLink);
-            break;
 
         }
     }

@@ -344,7 +344,7 @@
           case "projects": return displayProjects;
           case "services": return displayServices;
           case "contact": return displayContact;
-          case "contact-list": return displayContactList;
+          case "contact-List": return displayContactList;
           case "edit": return displayEdit;
           case "login": return displayLogin;
           case "register": return displayRegister;
